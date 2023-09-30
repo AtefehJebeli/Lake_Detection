@@ -10,8 +10,8 @@ test_tiles_no_overlap: Tiled test images without overlapping sections.
 3. Making Predictions on Test Images: Once the model is trained, it is then employed to make predictions on all the test images in our dataset.
 
 4. Code Guidance: In the code cells, you will find a descriptive cell preceding each code cell. These descriptive cells provide valuable information and guidelines for executing each code cell. Note that some cells may require setting specific paths, which are clearly indicated in the code for your convenience.
-5. 
-6. Note on Sanity Check Cells
+   
+5. Note on Sanity Check Cells
 This notebook contains several sanity check cells that are designed to verify the correctness of the workflow and the accuracy of the predictions. These cells are provided for reference and validation purposes and do not need to be executed during the typical usage of the notebook.
 Above each sanity check cell, you will find clarifications and explanations regarding its purpose and expected output. Feel free to review these cells to gain insights into the validation steps and to ensure the robustness of your analysis.
 When running the notebook for its primary purpose, such as training a model, making predictions, or performing post-processing, it is not necessary to execute the sanity check cells unless you have specific debugging or verification needs. In most cases, the primary workflow steps outlined in this README should suffice for your project.
@@ -43,15 +43,14 @@ Configure the paths in their code block to stitch predicted images together:
 input_folder = "test_tiles_no_overlap"
 output_folder = "stitched_tiled_test_images"
 metadata_folder = "json_test_tiles_no_overlap"
+
 For prediction:
 input_folder = "Final_Predictions/predicted_test_4k_Attention_res_net_2k_lake_2k_no_lake_no_overlap"
-
 output_folder = "stitched_test_prediction"
-
 metadata_folder = "json_test_tiles_no_overlap"
 
 
-6. Align Predicted Images with Original Test Images:
+7. Align Predicted Images with Original Test Images:
 Align the coordinates of the 12 stitched predicted images with the 12 original test images.
 Define the paths to the folders containing the original test images and predicted images
 original_images_folder = "test/"
@@ -59,7 +58,7 @@ predicted_images_folder = "stitched_test_prediction/"
 output_folder = "projected_predicted_images/"
 
 
-7. Providing lake_polygons_test.gpkg:
+8. Providing lake_polygons_test.gpkg:
 Specify the path for the projected predicted images in the code, similar to: test_prediction_dir = "projected_predicted_images".
 
 Sanity Checks:
