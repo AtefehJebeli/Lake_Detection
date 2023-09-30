@@ -40,14 +40,20 @@ Load the trained model with a line similar to the following: model.load_weights(
 Combine the tiled test images and the predicted images to obtain predictions for the 12 regions with their original sizes.
 Set the path to the JSON folder containing each image's information, including added 0 padding positions, in the code.
 Configure the paths in their code block to stitch predicted images together:
-input_folder = "test_tiles_no_overlap"
-output_folder = "stitched_tiled_test_images"
-metadata_folder = "json_test_tiles_no_overlap"
 
-For prediction:
-input_folder = "Final_Predictions/predicted_test_4k_Attention_res_net_2k_lake_2k_no_lake_no_overlap"
-output_folder = "stitched_test_prediction"
-metadata_folder = "json_test_tiles_no_overlap"
+   input_folder = "test_tiles_no_overlap"
+   
+   output_folder = "stitched_tiled_test_images"
+   
+   metadata_folder = "json_test_tiles_no_overlap"
+   
+   For prediction:
+   
+   input_folder = "Final_Predictions/predicted_test_4k_Attention_res_net_2k_lake_2k_no_lake_no_overlap"
+   
+   output_folder = "stitched_test_prediction"
+   
+   metadata_folder = "json_test_tiles_no_overlap"
 
 
 7. Align Predicted Images with Original Test Images:
