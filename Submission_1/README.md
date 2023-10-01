@@ -5,7 +5,7 @@ trained_tiles: Tiled images used for training.
 mask_tiles: Tiled masks associated with the training data.
 test_tiles_no_overlap: Tiled test images without overlapping sections.
 
-2. Training the Model with Balanced Data: In this notebook, we train our model using a subset of tiled training images containing balanced data. This subset consists of 2,000 images, with 1,000 labeled as "lake" (1) and a random selection of 1,000 labeled as "no lake" (0).
+2. Training the Model with Balanced Data: In this notebook, we train our model using a subset of tiled training images containing balanced data. This subset consists of 2,000 images of their masks labeled as "lake" (1) and a random selection of 2,000 images of their masks labeled as "no lake" (0).
 
 3. Making Predictions on Test Images: Once the model is trained, it is then employed to make predictions on all the test images in our dataset.
 
