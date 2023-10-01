@@ -42,8 +42,9 @@ metadata_folder = "json_test_tiles_no_overlap"
 
 6. Post-processing and providing lake_polygons_test.gpkg lake_polygons_test.gpkg: Specify the path for the projected predicted images in the code, similar to: test_prediction_dir = "projected_predicted_images_closed".
    Implement any necessary post-processing steps to refine the predictions and achieve the desired output quality.
+Running the below steps is not necessary
 
 Sanity Checks: Perform sanity checks to ensure the accuracy and reliability of the predictions. Overlay an extracted region from lake_polygons_test.gpkg with its projected image to verify whether their coordinates are aligned. Also, this is done both before and after creating the test package.
 
-Plotting the Prediction of 12 Test Areas with Their Original Images: Create visual representations by plotting the predictions of the 12 test areas alongside their original images. This step can aid in assessing the model's performance.
+8. Plotting the Prediction of 12 Test Areas with Their Original Images: Create visual representations by plotting the predictions of the 12 test areas alongside their original images. This step can aid in assessing the model's performance.
 
