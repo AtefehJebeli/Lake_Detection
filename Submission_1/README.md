@@ -1,12 +1,12 @@
 "Attention_Res_UNet_Trained_on_Balanced_Data.ipynb" Notebook
 
-1. Tiling for Consistency: The original extracted regions in our dataset vary in size. To ensure consistency, we tile these regions into 512x512 patches with overlapping sections and zero padding applied as needed. This part is done in preprocessing Notebook. The resulting tiled images are saved in three separate folders:
+1. Tiling for Consistency: The original extracted regions in our dataset vary in size. To ensure consistency, we tile these regions into 512x512 patches with overlapping sections and zero padding applied as needed. This part is done in preprocessing Notebook. The tiled folders are available on Google Drive. The resulting tiled images are saved in three separate folders:
 trained_tiles: Tiled images used for training.
 mask_tiles: Tiled masks associated with the training data.
 test_tiles_no_overlap: Tiled test images without overlapping sections.
 
 
-3. Training the Model with Balanced Data: In this notebook, we train our model using a subset of tiled training images containing balanced data. This subset consists of 2,000 images of their masks labeled as "lake" (1) and a random selection of 2,000 images of their masks labeled as "no lake" (0).  This part is done in preprocessing Notebook.
+3. Training the Model with Balanced Data: In this notebook, we train our model using a subset of tiled training images containing balanced data. This subset consists of 2,000 images of their masks labeled as "lake" (1) and a random selection of 2,000 images of their masks labeled as "no lake" (0).  This part is done in preprocessing Notebook. The mask and train folders are available on Google Drive.
 
 4. Making Predictions on Test Images: Once the model is trained, it is then employed to make predictions on all the test images in our dataset.
 
