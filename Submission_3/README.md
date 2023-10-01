@@ -14,7 +14,7 @@ The details of the steps are:
 
 1. Import Libraries and Define Functions and Models: Start by importing the necessary libraries and defining the functions and models required for your task.
    
-***Attention: If you download the saved model(best_model_lake_512_512_2k_lake_2k_none_res_attention_fold_1.h5) and test_tiles_no_overlap from Google Drive, You can skip the below step until Part 3.***
+***Attention: If you download the saved modelbest_model_lake_512_512_20k_UNet_fold_2.h5) and test_tiles_no_overlap from Google Drive, You can skip the below step until Part 3.***
 
 2. Train the Model: The model is trained using a 2-fold cross-validation approach. The training process involves using a batch size of 12 for 300 epochs. The best model weights are saved to prevent overfitting and to be used for prediction and transfer learning. Ensure that you set the paths for both the train images and mask images in this step.
 
@@ -26,23 +26,23 @@ Make Predictions: The model makes predictions on both the 80% train set and the 
 
 input_folder = "test_tiles_no_overlap"
 
-output_folder = "stitched_tiled_test_images"
+output_folder = "stitched_test_prediction_submission_3"
 
 metadata_folder = "json_test_tiles_no_overlap"
 
 For prediction:
 
-input_folder = "Final_Predictions/predicted_test_4k_Attention_res_net_2k_lake_2k_no_lake_no_overlap"
+input_folder = "Final_Predictions/predicted_test_U_Net_no_overlap"
 
 output_folder = "stitched_test_prediction"
 
-metadata_folder = "json_test_tiles_no_overlap"
+metadata_folder = "json_test_tiles_no_overlap_submission_3"
 
 5. Align Predicted Images with Original Test Images: Align the coordinates of the 12 stitched predicted images with the 12 original test images. Define the paths to the folders containing the original test images and predicted images original_images_folder = "test/" predicted_images_folder = "stitched_test_prediction/" output_folder = "projected_predicted_images/"
 
 6. Post-processing and providing lake_polygons_test.gpkg lake_polygons_test.gpkg: Specify the path for the projected predicted images in the code, similar to: test_prediction_dir = "projected_predicted_images_closed".
    Implement any necessary post-processing steps to refine the predictions and achieve the desired output quality.
-Running the below steps is not necessary
+Running the below steps is not necessary.
 
 Sanity Checks: Perform sanity checks to ensure the accuracy and reliability of the predictions. Overlay an extracted region from lake_polygons_test.gpkg with its projected image to verify whether their coordinates are aligned. Also, this is done both before and after creating the test package.
 
