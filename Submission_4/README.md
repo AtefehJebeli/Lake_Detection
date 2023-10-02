@@ -16,11 +16,11 @@ The details of the steps are:
 
 1. Import Libraries and Define Functions and Models: Start by importing the necessary libraries and defining the functions and models required for your task.
    
-Attention: If you download the saved modelbest_model_lake_512_512_20k_UNet_fold_1.h5) and test_tiles_no_overlap from Google Drive, You can skip the below step until Part 3.
+Attention: If you download the saved model (best_model_lake_512_512_20k_UNet_fold_1.h5) and test_tiles_no_overlap from Google Drive, You can skip the below step until Part 3.
 You can skip this step 
 2. Train the Model: The model is trained using a 2-fold cross-validation approach. The training process involves using a batch size of 12 for 300 epochs. The best model weights are saved to prevent overfitting and to be used for prediction and transfer learning. Ensure that you set the paths for both the train images and mask images in this step. The model is trained on the 2,000 images, and their masks contain the mask labels. The acquired weight is saved to train the whole train dataset. Their folders are available for download in Google Drive. (The process of generating these folders is available in the preprocessing step notebook.) The order of running the models is reversed. Note: This section does not need to be executed. The finalized models have already been saved and can be found in the "Submission 4" folder on Google Drive, which is shared by the committee. These models will be used for predictions on the 12 test images.
 
-3. Predict the Final Test Set (12 Test Images): A data generator is used to read the tiled test images and make predictions. (The 12 test regions' images are divided into tiles of 512x512 to be used with the model trained on 512x512 image dimensions.) Set the path for the tiled test files in the code. Load the trained model with a line similar to the following: model.load_weights("best_model_lake_512_512_2k_lake_2k_none_res_attention_fold_1.h5").
+3. Predict the Final Test Set (12 Test Images): A data generator is used to read the tiled test images and make predictions. (The 12 test regions' images are divided into tiles of 512x512 to be used with the model trained on 512x512 image dimensions.) Set the path for the tiled test files in the code. Load the trained model with a line similar to the following: model.load_weights("best_model_lake_512_512_20k_UNet_fold_1.h5").
 
 4. Stitch the Tiled Test Images: Combine the tiled test images and the predicted images to obtain predictions for the 12 regions with their original sizes. Set the path to the JSON folder containing each image's information, including added 0 padding positions in the code. Configure the paths in their code block to stitch predicted images together:
 
