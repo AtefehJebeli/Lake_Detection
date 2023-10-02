@@ -14,7 +14,7 @@ Note on Sanity Check Cells This notebook contains several sanity check cells tha
 The details of the steps are:
 
 Import Libraries and Define Functions and Models: Start by importing the necessary libraries and defining the functions and models required for your task.
-Attention: If you download the saved modelbest_model_lake_512_512_20k_UNet_fold_1.h5) and test_tiles_no_overlap from Google Drive, You can skip the below step until Part 3.
+Attention: If you download the saved model (best_model_lake_512_512_2k_lake_2k_none_res_attention_fold_1.h5) and test_tiles_no_overlap from Google Drive, You can skip the below step until Part 3.
 
 Train the Model: The model is trained using a 2-fold cross-validation approach. The training process involves using a batch size of 12 for 300 epochs. The best model weights are saved to prevent overfitting and to be used for prediction and transfer learning. Ensure that you set the paths for both the train images and mask images in this step. The model is trained on the 2,000 images, and their masks contain the mask labels. The acquired weight is saved to train the whole train dataset. Their folders are available for download in Google Drive. (The process of generating these folders is available in the preprocessing step notebook.) The order of running the models is reversed. Note: This section does not need to be executed. The finalized models have already been saved and can be found in the "Submission 3" folder on Google Drive, which is shared by the committee. These models will be used for predictions on the 12 test images.
 
@@ -24,15 +24,15 @@ Stitch the Tiled Test Images: Combine the tiled test images and the predicted im
 
 input_folder = "test_tiles_no_overlap"
 
-output_folder = "stitched_tiled_test_images_submission_3"
+output_folder = "stitched_tiled_test_images_submission_5"
 
 metadata_folder = "json_test_tiles_no_overlap"
 
 For prediction:
+You can download it from submission folder 2 on Google Drive
+input_folder = "Final_Predictions/predicted_test_4k_Attention_res_net_2k_lake_2k_no_lake_no_overlap"
 
-input_folder = "Final_Predictions/predicted_test_U_Net_no_overlap"
-
-output_folder = "stitched_test_prediction_submission_3"
+output_folder = "stitched_test_prediction_submission_5"
 
 metadata_folder = "json_test_tiles_no_overlap"
 
