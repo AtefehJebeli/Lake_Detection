@@ -16,9 +16,7 @@ The details of the steps are:
    
 ***Attention: If you download the saved modelbest_model_lake_512_512_20k_UNet_fold_2.h5) and test_tiles_no_overlap from Google Drive, You can skip the below step until Part 3.***
 
-2. Train the Model: The model is trained using a 2-fold cross-validation approach. The training process involves using a batch size of 12 for 300 epochs. The best model weights are saved to prevent overfitting and to be used for prediction and transfer learning. Ensure that you set the paths for both the train images and mask images in this step.
-
-Make Predictions: The model makes predictions on both the 80% train set and the 20% test set. Specify output folders to save the prediction results on the train and test sets for sanity checking. Ensure that you load the trained model at this stage for making predictions.
+2. Train the Model: The model is trained using a 2-fold cross-validation approach. The training process involves using a batch size of 12 for 300 epochs. The best model weights are saved to prevent overfitting and to be used for prediction and transfer learning. Ensure that you set the paths for both the train images and mask images in this step.  The model is trained on the 2,000 images, and their masks contain the mask labels. The acquired weight is saved to train the whole train dataset. Their folders are available for download in Google Drive. (The process of generating these folders is available in the preprocessing step notebook.) The order of running the models is reversed. Note: This section does not need to be executed. The finalized models have already been saved and can be found in the "Submission 3" folder on Google Drive, which is shared by the committee. These models will be used for predictions on the 12 test images.
 
 3. Predict the Final Test Set (12 Test Images): A data generator is used to read the tiled test images and make predictions. (The 12 test regions' images are divided into tiles of 512x512 to be used with the model trained on 512x512 image dimensions.) Set the path for the tiled test files in the code. Load the trained model with a line similar to the following: model.load_weights("best_model_lake_512_512_2k_lake_2k_none_res_attention_fold_1.h5").
 
@@ -36,11 +34,11 @@ input_folder = "Final_Predictions/predicted_test_U_Net_no_overlap"
 
 output_folder = "stitched_test_prediction"
 
-metadata_folder = "json_test_tiles_no_overlap_submission_3"
+metadata_folder = "json_test_tiles_no_overlap"
 
 5. Align Predicted Images with Original Test Images: Align the coordinates of the 12 stitched predicted images with the 12 original test images. Define the paths to the folders containing the original test images and predicted images original_images_folder = "test/" predicted_images_folder = "stitched_test_prediction/" output_folder = "projected_predicted_images/"
 
-6. Post-processing and providing lake_polygons_test.gpkg lake_polygons_test.gpkg: Specify the path for the projected predicted images in the code, similar to: test_prediction_dir = "projected_predicted_images_closed".
+6. Post-processing and providing lake_polygons_test.gpkg lake_polygons_test.gpkg: Specify the path for the projected predicted images in the code, similar to test_prediction_dir = "projected_predicted_images_closed".
    Implement any necessary post-processing steps to refine the predictions and achieve the desired output quality.
 Running the below steps is not necessary.
 
