@@ -26,7 +26,7 @@ You can skip this step
 
 input_folder = "test_tiles_no_overlap"
 
-output_folder = "stitched_tiled_test_images_submission_3"
+output_folder = "stitched_tiled_test_images_submission_4"
 
 metadata_folder = "json_test_tiles_no_overlap"
 
@@ -34,7 +34,7 @@ For prediction:
 
 input_folder = "Final_Predictions/predicted_test_U_Net_no_overlap"
 
-output_folder = "stitched_test_prediction_submission_3"
+output_folder = "stitched_test_prediction_submission_4"
 
 metadata_folder = "json_test_tiles_no_overlap"
 
