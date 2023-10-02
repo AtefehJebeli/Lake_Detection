@@ -1,5 +1,5 @@
 "UNet_Trained_on_Balanced_Data_Plus_Robust_Detection.ipynb" Notebook
-This submission and submission 4 are the most robust submissions, which are aligned coordinate correctly.
+This submission and submission 4 aligned coordinate.
 
 Tiling for Consistency: The original extracted regions in our dataset vary in size. To ensure consistency, we tile these regions into 512x512 patches with overlapping sections and zero padding applied as needed. This part is done in preprocessing Notebook. The tiled folders are available on Google Drive. The resulting tiled images are saved in three separate folders: trained_tiles: Tiled images used for training. mask_tiles: Tiled masks associated with the training data. test_tiles_no_overlap: Tiled test images without overlapping sections.
 
