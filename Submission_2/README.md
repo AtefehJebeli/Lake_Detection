@@ -22,11 +22,11 @@ Make Predictions: The model makes predictions on both the 80% train set and the 
 
 3. Predict the Final Test Set (12 Test Images): A data generator is used to read the tiled test images and make predictions. (The 12 test regions' images are divided into tiles of 512x512 to be used with the model trained on 512x512 image dimensions.) Set the path for the tiled test files in the code. Load the trained model with a line similar to the following: model.load_weights("best_model_lake_512_512_2k_lake_2k_none_res_attention_fold_1.h5").
 
-4. Stitch the Tiled Test Images: Combine the tiled test images and the predicted images to obtain predictions for the 12 regions with their original sizes. Set the path to the JSON folder containing each image's information, including added 0 padding positions, in the code. Configure the paths in their code block to stitch predicted images together:
+4. Stitch the Tiled Test Images: Combine the tiled test images and the predicted images to obtain predictions for the 12 regions with their original sizes. Set the path to the JSON folder containing each image's information, including added 0 padding positions in the code. Configure the paths in their code block to stitch predicted images together:
 
 input_folder = "test_tiles_no_overlap"
 
-output_folder = "stitched_tiled_test_images"
+output_folder = "stitched_tiled_test_images" 
 
 metadata_folder = "json_test_tiles_no_overlap"
 
@@ -39,8 +39,9 @@ output_folder = "stitched_test_prediction"
 metadata_folder = "json_test_tiles_no_overlap"
 
 5. Align Predicted Images with Original Test Images: Align the coordinates of the 12 stitched predicted images with the 12 original test images. Define the paths to the folders containing the original test images and predicted images original_images_folder = "test/" predicted_images_folder = "stitched_test_prediction/" output_folder = "projected_predicted_images/"
+   correction: in cell 278, for sanity checks, the correct path is: stitched_image_path = "stitched_images/Greenland26X_22W_Sentinel2_2019-06-03_05_region_1.tif"
 
-6. Providing lake_polygons_test.gpkg: Specify the path for the projected predicted images in the code, similar to: test_prediction_dir = "projected_predicted_images".
+7. Providing lake_polygons_test.gpkg: Specify the path for the projected predicted images in the code, similar to: test_prediction_dir = "projected_predicted_images".
 
 Sanity Checks: Perform sanity checks to ensure the accuracy and reliability of the predictions. Overlay an extracted region from lake_polygons_test.gpkg with its projected image to verify whether their coordinates are aligned. Also, this is done both before and after creating the test package.
 
