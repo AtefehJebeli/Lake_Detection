@@ -48,3 +48,15 @@ Sanity Checks: Perform sanity checks to ensure the accuracy and reliability of t
 Plotting the Prediction of 12 Test Areas with Their Original Images: Create visual representations by plotting the predictions of the 12 test areas alongside their original images. This step can aid in assessing the model's performance.
 
 Post Processing: Implement any necessary post-processing steps to refine the predictions and achieve the desired output quality.
+
+## Citing Our Work
+If you use any part of this code, including any of the five solutions, for academic work, research, or any other projects, please cite us. You can use the following BibTeX entry:
+
+```BibTeX
+@misc{AtefehJebeli2023lakedetection,
+    title={Lake Detection},
+    author={Atefeh Jebeli},
+    year={2023},
+    publisher={GitHub},
+    howpublished={\url{https://github.com/AtefehJebeli/Lake_Detection}}
+}
