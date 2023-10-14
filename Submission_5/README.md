@@ -43,3 +43,14 @@ metadata_folder = "json_test_tiles_no_overlap"
 
 Sanity Checks: Perform sanity checks to ensure the accuracy and reliability of the predictions. Overlay an extracted region from lake_polygons_test.gpkg with its projected image to verify whether their coordinates are aligned. Also, this is done both before and after creating the test package.
 
+## Citing Our Work
+If you use any part of this code, including any of the five solutions, for academic work, research, or any other projects, please cite us. You can use the following BibTeX entry:
+
+```BibTeX
+@misc{AtefehJebeli2023lakedetection,
+    title={Lake Detection},
+    author={Atefeh Jebeli},
+    year={2023},
+    publisher={GitHub},
+    howpublished={\url{https://github.com/AtefehJebeli/Lake_Detection}}
+}
